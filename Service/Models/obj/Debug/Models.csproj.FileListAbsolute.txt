@@ -1,0 +1,6 @@
+F:\ServiceLast\Service1\Service\Models\bin\Debug\Models.dll
+F:\ServiceLast\Service1\Service\Models\bin\Debug\Models.pdb
+F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.dll
+F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.pdb
+F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache
