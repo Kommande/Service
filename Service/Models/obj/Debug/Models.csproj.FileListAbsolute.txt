@@ -4,3 +4,9 @@ F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.csproj.CoreCompileInputs
 F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.dll
 F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.pdb
 F:\ServiceLast\Service1\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache
+F:\Service\Service\Models\bin\Debug\Models.dll
+F:\Service\Service\Models\bin\Debug\Models.pdb
+F:\Service\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache
+F:\Service\Service\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+F:\Service\Service\Models\obj\Debug\Models.dll
+F:\Service\Service\Models\obj\Debug\Models.pdb

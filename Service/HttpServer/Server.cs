@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Models;
+using Models.Configs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -13,9 +15,11 @@ namespace HttpServer
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly string _mainUrl;
         private HttpListener _httpListener;
-        public Server(string mainUrl)
+        public HttpServerConfigs configs { get; internal set; }
+        public Server(string mainUrl, HttpServerConfigs configs)
         {
             _mainUrl = mainUrl;
+            this.configs = configs;
         }
 
         private void Init()
@@ -55,16 +59,16 @@ namespace HttpServer
             try
             {
                // var currentContext = (HttpListenerContext)state;
-                var controller =  new MainController();
+                var controller =  new MainController(configs);
                 var requestedMethod = context.Request.Url.AbsolutePath.Remove(0,1);
                 requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
                 Console.WriteLine("target method name: "+requestedMethod);
                 var method = controller.GetType().GetMethod(requestedMethod);
-                var result = method.Invoke(controller, new object[] { context.Request });
+                var result = (ServiceActionResult)method.Invoke(controller, new object[] { context.Request });
 
-                context.Response.StatusCode = 200;
+                context.Response.StatusCode = result.HttpResponseCode;
                 context.Response.SendChunked = true;
-                var bytes = Encoding.UTF8.GetBytes((string) result);
+                var bytes = Encoding.UTF8.GetBytes((string) result.Message);
                 context.Response.OutputStream.Write(bytes,0,bytes.Length);
                 context.Response.Close();
                 //int totalTime = 0;                

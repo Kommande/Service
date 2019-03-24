@@ -44,6 +44,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\Hardware\Hardware.csproj">
       <Project>{1c9229d4-3513-4e4a-87d0-5e9285891af6}</Project>
       <Name>Hardware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{5E7B2A59-B075-448F-9EDF-FF7B2FAC9281}</Project>
+      <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Software\Software.csproj">
       <Project>{6b350069-316b-4709-8e16-9208cead319b}</Project>

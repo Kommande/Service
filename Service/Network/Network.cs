@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Threading;
 using HttpServer;
 using Models.IpFilter;
+using Models.Configs;
 
 namespace Network
 {
@@ -22,10 +23,12 @@ namespace Network
         public Socket ListenSocket { get; private set; }
 
         public IpV4Filter filter { get; private set; }
+        public HttpServerConfigs config { get; internal set; }
 
-        public Network(IpV4Filter filter)
+        public Network(IpV4Filter filter, HttpServerConfigs config)
         {
             this.filter = filter;
+            this.config = config;
         }
 
         public void BindSocket()
@@ -231,7 +234,7 @@ namespace Network
         public void StartHttpServer()
         {
             var mainUrl = GetMainUrl();
-            var server = new Server(mainUrl);
+            var server = new Server(mainUrl,config);
             server.StartServer();
         }
     }
