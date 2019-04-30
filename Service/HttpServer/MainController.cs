@@ -80,8 +80,8 @@ namespace HttpServer
         {
             var query = HttpUtility.ParseQueryString(request.Url.Query);
             var programmString = query.Get(0);//network.AcceptCommand();
-            programmString = programmString.Remove(0, 1);
-            programmString = programmString.Remove(programmString.Length - 1, 1);
+            programmString = programmString.Remove(0, 3);
+            programmString = programmString.Remove(programmString.Length - 1, 3);
             var commandParser = new CommandParser();
             // var pathList = commandParser.ParsePath(programmString);
             var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
