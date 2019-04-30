@@ -26,6 +26,7 @@ namespace Software
             {
                 try
                 {
+                    Console.WriteLine(path);
                     var info = FileVersionInfo.GetVersionInfo(path);
                     var test = new FileInfo(path);
                    

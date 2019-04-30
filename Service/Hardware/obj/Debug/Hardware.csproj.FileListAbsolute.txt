@@ -26,7 +26,6 @@ F:\Service\Service\Hardware\bin\Debug\Hardware.exe
 F:\Service\Service\Hardware\bin\Debug\Hardware.pdb
 F:\Service\Service\Hardware\bin\Debug\log4net.dll
 F:\Service\Service\Hardware\bin\Debug\log4net.xml
-F:\Service\Service\Hardware\obj\Debug\Hardware.csprojAssemblyReference.cache
 F:\Service\Service\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
 F:\Service\Service\Hardware\obj\Debug\Hardware.csproj.CopyComplete
 F:\Service\Service\Hardware\obj\Debug\Hardware.exe

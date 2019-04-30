@@ -30,7 +30,6 @@ F:\Service\Service\Software\bin\Debug\log4net.dll
 F:\Service\Service\Software\bin\Debug\Newtonsoft.Json.dll
 F:\Service\Service\Software\bin\Debug\log4net.xml
 F:\Service\Service\Software\bin\Debug\Newtonsoft.Json.xml
-F:\Service\Service\Software\obj\Debug\Software.csprojAssemblyReference.cache
 F:\Service\Service\Software\obj\Debug\Software.csproj.CoreCompileInputs.cache
 F:\Service\Service\Software\obj\Debug\Software.csproj.CopyComplete
 F:\Service\Service\Software\obj\Debug\Software.dll
