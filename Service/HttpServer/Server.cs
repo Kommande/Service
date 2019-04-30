@@ -61,13 +61,14 @@ namespace HttpServer
                // var currentContext = (HttpListenerContext)state;
                 var controller =  new MainController(configs);
                 var requestedMethod = context.Request.Url.AbsolutePath.Remove(0,1);
-                requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
+                //requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
                 Console.WriteLine("target method name: "+requestedMethod);
                 var method = controller.GetType().GetMethod(requestedMethod);
                 var result = (ServiceActionResult)method.Invoke(controller, new object[] { context.Request });
 
                 context.Response.StatusCode = result.HttpResponseCode;
                 context.Response.SendChunked = true;
+                context.Response.ContentType = "application/json";
                 var bytes = Encoding.UTF8.GetBytes((string) result.Message);
                 context.Response.OutputStream.Write(bytes,0,bytes.Length);
                 context.Response.Close();
