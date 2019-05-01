@@ -85,6 +85,8 @@ namespace HttpServer
             programmString = programmString.Remove(0, 3);
             programmString = programmString.Remove(programmString.Length - 3, 3);
             Console.WriteLine("programmString: " + programmString);
+            programmString = programmString.Replace("%5C","\\");
+            Console.WriteLine("programmString: " + programmString);
             var commandParser = new CommandParser();
             // var pathList = commandParser.ParsePath(programmString);
             var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
