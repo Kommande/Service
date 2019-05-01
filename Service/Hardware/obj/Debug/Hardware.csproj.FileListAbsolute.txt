@@ -30,3 +30,4 @@ F:\Service\Service\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
 F:\Service\Service\Hardware\obj\Debug\Hardware.csproj.CopyComplete
 F:\Service\Service\Hardware\obj\Debug\Hardware.exe
 F:\Service\Service\Hardware\obj\Debug\Hardware.pdb
+F:\Service\Service\Hardware\obj\Debug\Hardware.csprojAssemblyReference.cache

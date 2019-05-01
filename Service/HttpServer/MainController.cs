@@ -26,7 +26,7 @@ namespace HttpServer
         {
             this.configs = configs;
         }
-        public ServiceActionResult InitDowload(HttpListenerRequest request)
+        public ServiceActionResult InitDownload(HttpListenerRequest request)
         {
             try
             {
@@ -79,16 +79,10 @@ namespace HttpServer
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
         {
             var query = HttpUtility.ParseQueryString(request.Url.Query,Encoding.UTF8);
-            Console.WriteLine("query: "+ query);
             var programmString = query.Get(0);//network.AcceptCommand();
-            Console.WriteLine("programmString: " + programmString);
-            programmString=HttpUtility.UrlDecode(programmString);
+            programmString = HttpUtility.UrlDecode(programmString);
             programmString = programmString.Remove(0, 1);
             programmString = programmString.Remove(programmString.Length - 1, 1);
-            Console.WriteLine("programmString: " + programmString);
-            //programmString = programmString.Replace("%5C","\\");
-            //programmString = programmString.Replace("%20", " ");
-            Console.WriteLine("programmString: " + programmString);
             var commandParser = new CommandParser();
             // var pathList = commandParser.ParsePath(programmString);
             var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
