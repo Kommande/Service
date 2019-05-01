@@ -38,7 +38,7 @@ namespace HttpServer
                     /*fileName = fileName.Remove(0, 1);
                     fileName = fileName.Remove(fileName.Length - 1, 1);*/
                     WebClient myWebClient = new WebClient();
-                    var path = AppDomain.CurrentDomain.BaseDirectory + @"\";// @"D:\Диплом\";
+                    var path = AppDomain.CurrentDomain.BaseDirectory;// @"D:\Диплом\";
                     string myStringWebResource = url;
                     Console.WriteLine("Downloading File \"{0}\" from \"{1}\" .......\n\n", fileName, myStringWebResource);
                     myWebClient.DownloadFile(myStringWebResource, path + fileName);
