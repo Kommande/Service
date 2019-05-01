@@ -35,11 +35,11 @@ namespace HttpServer
                     var query = HttpUtility.ParseQueryString(request.Url.Query);
                     var url = query.Get(0);
                     var fileName = query.Get(1);
-                    fileName = fileName.Remove(0, 1);
-                    fileName = fileName.Remove(fileName.Length - 1, 1);
+                    /*fileName = fileName.Remove(0, 1);
+                    fileName = fileName.Remove(fileName.Length - 1, 1);*/
                     WebClient myWebClient = new WebClient();
                     var path = AppDomain.CurrentDomain.BaseDirectory + @"\";// @"D:\Диплом\";
-                    string myStringWebResource = url + fileName;
+                    string myStringWebResource = url;
                     Console.WriteLine("Downloading File \"{0}\" from \"{1}\" .......\n\n", fileName, myStringWebResource);
                     myWebClient.DownloadFile(myStringWebResource, path + fileName);
                     Console.WriteLine("Successfully Downloaded File \"{0}\" from \"{1}\"", fileName, myStringWebResource);
