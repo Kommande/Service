@@ -79,9 +79,12 @@ namespace HttpServer
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
         {
             var query = HttpUtility.ParseQueryString(request.Url.Query);
+            Console.WriteLine("query: "+ query);
             var programmString = query.Get(0);//network.AcceptCommand();
+            Console.WriteLine("programmString: " + programmString);
             programmString = programmString.Remove(0, 3);
-            programmString = programmString.Remove(programmString.Length - 1, 3);
+            programmString = programmString.Remove(programmString.Length - 3, 3);
+            Console.WriteLine("programmString: " + programmString);
             var commandParser = new CommandParser();
             // var pathList = commandParser.ParsePath(programmString);
             var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
