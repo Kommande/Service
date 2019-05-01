@@ -48,7 +48,7 @@ namespace HttpServer
                     Install(path + fileName);
                 }).Start();
 
-                return new ServiceActionResult() { Result = true, Message = "Download started", HttpResponseCode = 200 };
+                return new ServiceActionResult() { Result = true, Message = "true", HttpResponseCode = 200 };
                 //return "Download started";
             }
             catch (Exception e)
@@ -63,19 +63,7 @@ namespace HttpServer
         private bool Install(string filePath)
         {
             Console.WriteLine("filePath: " + filePath);
-            /* var installerFilePath = filePath;
-             var startInfo = new ProcessStartInfo();
-             startInfo.FileName = installerFilePath;
-             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-             startInfo.UseShellExecute = false;
-             startInfo.CreateNoWindow = true;
-             startInfo.Arguments = "/silent";
-             // var installerProcess = System.Diagnostics.Process.Start(installerFilePath, "/silent",);
-             var installerProcess = System.Diagnostics.Process.Start(startInfo);
-             //installerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
-             //installerProcess.a
-             installerProcess.WaitForExit();*/
+            
             Process installerProcess = new Process();
             ProcessStartInfo processInfo = new ProcessStartInfo();
             processInfo.Arguments = string.Format("/i {0} /q",filePath);
