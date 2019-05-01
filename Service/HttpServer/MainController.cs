@@ -63,19 +63,27 @@ namespace HttpServer
         private bool Install(string filePath)
         {
             Console.WriteLine("filePath: " + filePath);
-            var installerFilePath = filePath;
-            var startInfo = new ProcessStartInfo();
-            startInfo.FileName = installerFilePath;
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.UseShellExecute = false;
-            startInfo.CreateNoWindow = true;
-            startInfo.Arguments = "/silent";
-            // var installerProcess = System.Diagnostics.Process.Start(installerFilePath, "/silent",);
-            var installerProcess = System.Diagnostics.Process.Start(startInfo);
-            //installerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            /* var installerFilePath = filePath;
+             var startInfo = new ProcessStartInfo();
+             startInfo.FileName = installerFilePath;
+             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+             startInfo.UseShellExecute = false;
+             startInfo.CreateNoWindow = true;
+             startInfo.Arguments = "/silent";
+             // var installerProcess = System.Diagnostics.Process.Start(installerFilePath, "/silent",);
+             var installerProcess = System.Diagnostics.Process.Start(startInfo);
+             //installerProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-            //installerProcess.a
+             //installerProcess.a
+             installerProcess.WaitForExit();*/
+            Process installerProcess = new Process();
+            ProcessStartInfo processInfo = new ProcessStartInfo();
+            processInfo.Arguments = string.Format("/i {0} /q",filePath);
+            processInfo.FileName = "msiexec";
+            installerProcess.StartInfo = processInfo;
+            installerProcess.Start();
             installerProcess.WaitForExit();
+            return true;
             return true;
         }
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
