@@ -43,6 +43,8 @@ namespace HttpServer
                     Console.WriteLine("Downloading File \"{0}\" from \"{1}\" .......\n\n", fileName, myStringWebResource);
                     myWebClient.DownloadFile(myStringWebResource, path + fileName);
                     Console.WriteLine("Successfully Downloaded File \"{0}\" from \"{1}\"", fileName, myStringWebResource);
+                    Console.WriteLine("path:" + path);
+                    Console.WriteLine("fileName: " + fileName);
                     Install(path + fileName);
                 }).Start();
 
