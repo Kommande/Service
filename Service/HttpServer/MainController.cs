@@ -15,6 +15,7 @@ using System.Configuration;
 using System.Collections.Specialized;
 using Models.Configs;
 using Models;
+using Services.Interfaces;
 
 namespace HttpServer
 {
@@ -22,84 +23,29 @@ namespace HttpServer
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public HttpServerConfigs configs { get; internal set; }
-        public MainController(HttpServerConfigs configs)
+
+        private readonly IDownloadService downloadService;
+        private readonly IMainInfoCollectorService mainInfoCollectorService;
+
+        public MainController(HttpServerConfigs configs,
+            IDownloadService downloadService,
+            IMainInfoCollectorService mainInfoCollectorService)
         {
             this.configs = configs;
+            this.downloadService = downloadService;
+            this.mainInfoCollectorService = mainInfoCollectorService;
+         
         }
         public ServiceActionResult InitDownload(HttpListenerRequest request)
         {
-            try
-            {
-                new Thread(() =>
-                {
-                    var query = HttpUtility.ParseQueryString(request.Url.Query);
-                    var url = query.Get(0);
-                    var fileName = query.Get(1);
-                    /*fileName = fileName.Remove(0, 1);
-                    fileName = fileName.Remove(fileName.Length - 1, 1);*/
-                    WebClient myWebClient = new WebClient();
-                    var path = AppDomain.CurrentDomain.BaseDirectory;// @"D:\Диплом\";
-                    string myStringWebResource = url;
-                    Console.WriteLine("Downloading File \"{0}\" from \"{1}\" .......\n\n", fileName, myStringWebResource);
-                    myWebClient.DownloadFile(myStringWebResource, path + fileName);
-                    Console.WriteLine("Successfully Downloaded File \"{0}\" from \"{1}\"", fileName, myStringWebResource);
-                    Console.WriteLine("path:" + path);
-                    Console.WriteLine("fileName: " + fileName);
-                    Install(path + fileName);
-                }).Start();
-
-                return new ServiceActionResult() { Result = true, Message = "true", HttpResponseCode = 200 };
-                //return "Download started";
-            }
-            catch (Exception e)
-            {
-                log.Error(e.Message);
-                log.Error(e.StackTrace);
-                return new ServiceActionResult() { Result = true, Message = e.Message, HttpResponseCode = 500 };
-            }
+            var result = downloadService.DownloadAndInstallMSI(request);
+            return result;
 
         }
 
-        private bool Install(string filePath)
-        {
-            Console.WriteLine("filePath: " + filePath);
-            
-            Process installerProcess = new Process();
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.Arguments = string.Format("/i {0} /q",filePath);
-            processInfo.FileName = "msiexec";
-            installerProcess.StartInfo = processInfo;
-            installerProcess.Start();
-            installerProcess.WaitForExit();
-            return true;
-            return true;
-        }
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
         {
-            var query = HttpUtility.ParseQueryString(request.Url.Query,Encoding.UTF8);
-            var programmString = query.Get(0);//network.AcceptCommand();
-            programmString = HttpUtility.UrlDecode(programmString);
-            programmString = programmString.Remove(0, 1);
-            programmString = programmString.Remove(programmString.Length - 1, 1);
-            var commandParser = new CommandParser();
-            // var pathList = commandParser.ParsePath(programmString);
-            var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
-            Console.WriteLine("Received");
-            var hddSet = HddInfoCollector.CollectInfo();
-            var ramSet = RamInfoCollector.CollectInfo();
-            var monitor = DesctopMonitorInfoCollector.CollectInfo();
-            var processorSet = ProcessorInfoCollector.CollectInfoFirstProcessor();
-            var resultString = new StringBuilder();
-            resultString.Append("{");
-            resultString.Append(string.Format("\"softwareSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(programmsInfo)));
-            resultString.Append("\"hardware\": {");
-            resultString.Append(string.Format("\"processor\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(processorSet)));
-            resultString.Append(string.Format("\"hddSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(hddSet)));
-            resultString.Append(string.Format("\"ramSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(ramSet)));
-            resultString.Append(string.Format("\"monitor\": {0}" + Environment.NewLine, JsonConvert.SerializeObject(monitor.First())));
-            resultString.Append("}");
-            resultString.Append("}");
-            return new ServiceActionResult() { Result = true, Message = resultString.ToString(), HttpResponseCode = 200 };
+            return mainInfoCollectorService.GetMainInfo(request);
         }
 
         public ServiceActionResult InvokeCustomModule(HttpListenerRequest request)

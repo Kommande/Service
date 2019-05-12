@@ -80,6 +80,10 @@
       <Project>{5E7B2A59-B075-448F-9EDF-FF7B2FAC9281}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{334CDBA4-9B74-44E9-BF1E-F4F0B0B2566B}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Software\Software.csproj">
       <Project>{6b350069-316b-4709-8e16-9208cead319b}</Project>
       <Name>Software</Name>

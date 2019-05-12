@@ -1,5 +1,8 @@
 ﻿using Models;
 using Models.Configs;
+using Services;
+using Services.Impl;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +18,25 @@ namespace HttpServer
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly string _mainUrl;
         private HttpListener _httpListener;
+        private readonly IDownloadService downloadService;
+        private readonly IInstallService installService;
+        private readonly IMainInfoCollectorService mainInfoCollectorService;
         public HttpServerConfigs configs { get; internal set; }
         public Server(string mainUrl, HttpServerConfigs configs)
         {
             _mainUrl = mainUrl;
             this.configs = configs;
+            this.installService = new InstallService();
+            this.downloadService = new DownloadService(installService);
+            this.mainInfoCollectorService = new MainInfoCollectorService();
+
         }
 
         private void Init()
         {
             _httpListener = new HttpListener();
             _httpListener.Prefixes.Add(_mainUrl);
+            
             log4net.Config.XmlConfigurator.Configure();
         }
 
@@ -59,7 +70,8 @@ namespace HttpServer
             try
             {
                // var currentContext = (HttpListenerContext)state;
-                var controller =  new MainController(configs);
+               
+                var controller =  new MainController(configs,downloadService,mainInfoCollectorService);
                 var requestedMethod = context.Request.Url.AbsolutePath.Remove(0,1);
                 //requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
                 Console.WriteLine("target method name: "+requestedMethod);

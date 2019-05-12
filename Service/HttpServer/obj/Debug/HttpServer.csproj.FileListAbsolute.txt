@@ -51,3 +51,5 @@ F:\Service\Service\HttpServer\obj\Debug\HttpServer.csproj.CoreCompileInputs.cach
 F:\Service\Service\HttpServer\obj\Debug\HttpServer.csproj.CopyComplete
 F:\Service\Service\HttpServer\obj\Debug\HttpServer.dll
 F:\Service\Service\HttpServer\obj\Debug\HttpServer.pdb
+F:\Service\Service\HttpServer\bin\Debug\Services.dll
+F:\Service\Service\HttpServer\bin\Debug\Services.pdb

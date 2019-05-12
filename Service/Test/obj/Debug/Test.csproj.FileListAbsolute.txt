@@ -93,3 +93,5 @@ F:\Service\Service\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 F:\Service\Service\Test\obj\Debug\Test.csproj.CopyComplete
 F:\Service\Service\Test\obj\Debug\Test.exe
 F:\Service\Service\Test\obj\Debug\Test.pdb
+F:\Service\Service\Test\bin\Debug\Services.dll
+F:\Service\Service\Test\bin\Debug\Services.pdb
