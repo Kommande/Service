@@ -40,8 +40,14 @@ namespace HttpServer
         {
             var result = downloadService.DownloadAndInstallMSI(request);
             return result;
-
         }
+
+        public ServiceActionResult DownloadDll(HttpListenerRequest request)
+        {
+            var result = downloadService.DownloadDll(request);
+            return result;
+        }
+
 
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
         {

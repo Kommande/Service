@@ -27,7 +27,7 @@ namespace HttpServer
             _mainUrl = mainUrl;
             this.configs = configs;
             this.installService = new InstallService();
-            this.downloadService = new DownloadService(installService);
+            this.downloadService = new DownloadService(installService,configs);
             this.mainInfoCollectorService = new MainInfoCollectorService();
 
         }
@@ -45,6 +45,7 @@ namespace HttpServer
             Init();
             _httpListener.Start();
             Console.WriteLine("Ожидание подключений...");
+            log.Info("Ожидание подключений...");
             while (true)
             {
                 try
@@ -75,6 +76,7 @@ namespace HttpServer
                 var requestedMethod = context.Request.Url.AbsolutePath.Remove(0,1);
                 //requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
                 Console.WriteLine("target method name: "+requestedMethod);
+                log.Info("target method name: " + requestedMethod);
                 var method = controller.GetType().GetMethod(requestedMethod);
                 var result = (ServiceActionResult)method.Invoke(controller, new object[] { context.Request });
 

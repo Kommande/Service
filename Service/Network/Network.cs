@@ -226,7 +226,7 @@ namespace Network
             }
            
             IPEndPoint iPEndPoint = new IPEndPoint(iPAddress, port);
-            var address = $"http://{iPEndPoint.Address.ToString()}:6666/";
+            var address = $"http://{iPEndPoint.Address.ToString()}:{config.Port}/";
             Console.WriteLine(address);
             return address;
         }

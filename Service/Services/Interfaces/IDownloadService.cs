@@ -11,5 +11,6 @@ namespace Services.Interfaces
     public interface IDownloadService
     {
         ServiceActionResult DownloadAndInstallMSI(HttpListenerRequest request);
+        ServiceActionResult DownloadDll(HttpListenerRequest request);
     }
 }

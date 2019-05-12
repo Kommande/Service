@@ -9,5 +9,6 @@ namespace Models.Configs
     public class HttpServerConfigs
     {
         public string PluginPath { get; set; }
+        public string Port { get; set; }
     }
 }

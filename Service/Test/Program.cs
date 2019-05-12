@@ -28,10 +28,11 @@ namespace Test
             var ip2 = ConfigurationManager.AppSettings["IpV4Filter2"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter2"];
             var ip3 = ConfigurationManager.AppSettings["IpV4Filter3"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter3"];
             var ip4 = ConfigurationManager.AppSettings["IpV4Filter4"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter4"];
-            var PluginPath = ConfigurationManager.AppSettings["PluginPath"];
+            var port = ConfigurationManager.AppSettings["IpV4Port"] == string.Empty ? "6666" : ConfigurationManager.AppSettings["IpV4Port"];
+            var PluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
 
             var network = new Network.Network(new IpV4Filter() { Ip1 = ip1, Ip2 = ip2, Ip3 = ip3, Ip4 = ip4 },
-                new Models.Configs.HttpServerConfigs() { PluginPath = PluginPath });
+                new Models.Configs.HttpServerConfigs() { PluginPath = PluginPath, Port = port });
             network.StartHttpServer();
             /*var a = new SoftwareInfoCollector();
 
