@@ -32,11 +32,11 @@ namespace ServiceInstaller
                 var ip3 = ConfigurationManager.AppSettings["IpV4Filter3"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter3"];
                 var ip4 = ConfigurationManager.AppSettings["IpV4Filter4"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter4"];
                 var port = ConfigurationManager.AppSettings["IpV4Port"] == string.Empty ? "6666" : ConfigurationManager.AppSettings["IpV4Port"];
-                var PluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
+                var pluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
+                var msiFilePath = ConfigurationManager.AppSettings["MsiFilePath"] == string.Empty ? null : ConfigurationManager.AppSettings["MsiFilePath"];
 
-                log.Info(string.Format("{0}.{1}.{2}.{3}", ip1, ip2, ip3, ip4));
                 var network = new Network.Network(new IpV4Filter() { Ip1 = ip1, Ip2 = ip2, Ip3 = ip3, Ip4 = ip4 },
-                    new Models.Configs.HttpServerConfigs() { PluginPath = PluginPath, Port = port });
+                    new Models.Configs.HttpServerConfigs() { PluginPath = pluginPath, MsiFilePath = msiFilePath, Port = port });
                 network.StartHttpServer();
             }
             catch(Exception e)

@@ -10,5 +10,6 @@ namespace Models.Configs
     {
         public string PluginPath { get; set; }
         public string Port { get; set; }
+        public string MsiFilePath { get; set; }
     }
 }

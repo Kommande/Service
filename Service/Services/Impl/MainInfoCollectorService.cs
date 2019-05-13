@@ -17,13 +17,18 @@ namespace Services.Impl
         public ServiceActionResult GetMainInfo(HttpListenerRequest request)
         {
             var query = HttpUtility.ParseQueryString(request.Url.Query, Encoding.UTF8);
-            var programmString = query.Get(0);//network.AcceptCommand();
-            programmString = HttpUtility.UrlDecode(programmString);
-            programmString = programmString.Remove(0, 1);
-            programmString = programmString.Remove(programmString.Length - 1, 1);
-           // var commandParser = new CommandParser();
-            // var pathList = commandParser.ParsePath(programmString);
-            var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(programmString.Split(',').ToList());
+            string programString = string.Empty;
+            if (query.HasKeys())
+            {
+                 programString = query.Get(0);
+                 programString = HttpUtility.UrlDecode(programString);
+                 programString = programString.Remove(0, 1);
+                 programString = programString.Remove(programString.Length - 1, 1);
+
+            }
+
+
+            var programmsInfo = programString.Equals(string.Empty)? Software.SoftwareInfoCollector.CollectInfo(): Software.SoftwareInfoCollector.CollectInfo(programString.Split(',').ToList());
             Console.WriteLine("Received");
             var hddSet = HddInfoCollector.CollectInfo();
             var ramSet = RamInfoCollector.CollectInfo();

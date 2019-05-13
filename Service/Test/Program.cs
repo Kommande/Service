@@ -1,19 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Hardware;
-using Microsoft.Win32;
-using System.IO;
-using System.Diagnostics;
-using System.Runtime.Serialization.Json;
-using Newtonsoft.Json;
-using Network;
-using Newtonsoft.Json.Linq;
-using System.Management;
-using HttpServer;
-using Software;
 using System.Configuration;
 using Models.IpFilter;
 
@@ -29,10 +14,10 @@ namespace Test
             var ip3 = ConfigurationManager.AppSettings["IpV4Filter3"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter3"];
             var ip4 = ConfigurationManager.AppSettings["IpV4Filter4"] == string.Empty ? null : ConfigurationManager.AppSettings["IpV4Filter4"];
             var port = ConfigurationManager.AppSettings["IpV4Port"] == string.Empty ? "6666" : ConfigurationManager.AppSettings["IpV4Port"];
-            var PluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
-
+            var pluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
+            var msiFilePath = ConfigurationManager.AppSettings["MsiFilePath"] == string.Empty ? null : ConfigurationManager.AppSettings["MsiFilePath"];
             var network = new Network.Network(new IpV4Filter() { Ip1 = ip1, Ip2 = ip2, Ip3 = ip3, Ip4 = ip4 },
-                new Models.Configs.HttpServerConfigs() { PluginPath = PluginPath, Port = port });
+                new Models.Configs.HttpServerConfigs() { PluginPath = pluginPath,MsiFilePath = msiFilePath,Port = port });
             network.StartHttpServer();
             /*var a = new SoftwareInfoCollector();
 

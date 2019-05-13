@@ -59,17 +59,19 @@ namespace HttpServer
             try
             {
                 var query = HttpUtility.ParseQueryString(request.Url.Query);
-                var fileName = query.GetParametr(1);
-                var pluginClass = query.GetParametr(2);
-                var method = query.GetParametr(3);
-                var paramets = query.GetParametr(4);
-                Assembly plugin = Assembly.Load(configs.PluginPath + fileName);
+                var fileName = query.GetParametr(0);
+                var pluginClass = query.GetParametr(1);
+                var method = query.GetParametr(2);
+                var paramets = query.GetParametr(3);
+                var path = configs.PluginPath ?? AppDomain.CurrentDomain.BaseDirectory;
+                Assembly plugin = Assembly.LoadFile(path + fileName);
+                //Assembly.ReflectionOnlyLoadFrom(@"C:\Users\KOMMANDE01\source\repos\TestLib\TestLib\bin\Debug\TestLib.dll");//
                 // Get the type to use.
                 Type pluginType = plugin.GetType(pluginClass);
-                // Get the method to call.
-                MethodInfo pluginMethod = pluginType.GetMethod(method);
                 // Create an instance.
                 object obj = Activator.CreateInstance(pluginType);
+                // Get the method to call.
+                MethodInfo pluginMethod = pluginType.GetMethod(method);
                 // Execute the method.
                 var res = (string)pluginMethod.Invoke(obj, paramets.Split(','));
                 return new ServiceActionResult() { Result = true, Message = res, HttpResponseCode = 200 };
@@ -86,10 +88,15 @@ namespace HttpServer
 
     public static class HttpHelper
     {
-        public static string GetParametr(this NameValueCollection col, int index)
+        public static string GetParametrWithRemove(this NameValueCollection col, int index)
         {
             var str =col.Get(index).Remove(0, 1);
             str = str.Remove(str.Length - 1, 1);
+            return str;
+        }
+        public static string GetParametr(this NameValueCollection col, int index)
+        {
+            var str = col.Get(index);
             return str;
         }
     }
