@@ -43,4 +43,3 @@ D:\Диплом\Service-master\Service\Software\bin\Debug\Newtonsoft.Json.xml
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.dll
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.pdb
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.csprojResolveAssemblyReference.cache
-F:\Service\Service\Software\obj\Debug\Software.csprojAssemblyReference.cache
