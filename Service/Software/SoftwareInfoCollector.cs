@@ -219,7 +219,7 @@ namespace Software
                             DateTime date = new DateTime();
                             DateTime.TryParseExact(installDate, "yyyyMMdd", null, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out date);
                             installDate = date.ToString("yyyy.MM.dd H:mm");
-                            installDate = installDate.Replace('.', '/');
+                            //installDate = installDate.Replace('.', '/');
 
                             if (!result.Contains(name))
                             {
