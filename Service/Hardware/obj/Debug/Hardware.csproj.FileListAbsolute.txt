@@ -37,3 +37,4 @@ D:\Диплом\Service-master\Service\Hardware\obj\Debug\Hardware.pdb
 F:\Service\Service\Hardware\bin\Debug\Hardware.dll.config
 F:\Service\Service\Hardware\bin\Debug\Hardware.dll
 F:\Service\Service\Hardware\obj\Debug\Hardware.dll
+F:\Service\Service\Hardware\obj\Debug\Hardware.csprojAssemblyReference.cache

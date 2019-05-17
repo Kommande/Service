@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ServiceInstaller
@@ -19,10 +20,14 @@ namespace ServiceInstaller
         public Service1()
         {
             InitializeComponent();
+            this.CanStop = true;
+            this.CanPauseAndContinue = true;
+            this.AutoLog = true;
         }
 
         protected override void OnStart(string[] args)
         {
+           
             try
             {
                 log.Info("Service Started");
@@ -37,7 +42,9 @@ namespace ServiceInstaller
 
                 var network = new Network.Network(new IpV4Filter() { Ip1 = ip1, Ip2 = ip2, Ip3 = ip3, Ip4 = ip4 },
                     new Models.Configs.HttpServerConfigs() { PluginPath = pluginPath, MsiFilePath = msiFilePath, Port = port });
-                network.StartHttpServer();
+                Thread serverThread = new Thread(new ThreadStart(network.StartHttpServer));
+                serverThread.Start();
+               // network.StartHttpServer();
             }
             catch(Exception e)
             {

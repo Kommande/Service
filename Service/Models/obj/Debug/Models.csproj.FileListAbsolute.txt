@@ -14,3 +14,4 @@ D:\Диплом\Service-master\Service\Models\bin\Debug\Models.pdb
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.dll
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.pdb
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+F:\Service\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache

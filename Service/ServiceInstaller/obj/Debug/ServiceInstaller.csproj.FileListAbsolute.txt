@@ -15,8 +15,6 @@ F:\Service\Service\ServiceInstaller\bin\Debug\HttpServer.dll.config
 F:\Service\Service\ServiceInstaller\bin\Debug\Software.pdb
 F:\Service\Service\ServiceInstaller\bin\Debug\Hardware.pdb
 F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.csprojAssemblyReference.cache
-F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.ProjectInstaller.resources
-F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.csproj.GenerateResource.cache
 F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.csproj.CoreCompileInputs.cache
 F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.csproj.CopyComplete
 F:\Service\Service\ServiceInstaller\obj\Debug\ServiceInstaller.exe

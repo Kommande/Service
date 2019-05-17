@@ -1,6 +1,6 @@
 ﻿namespace ServiceInstaller
 {
-    partial class ProjectInstaller
+    partial class Installer
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,31 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
-            // 
-            // serviceProcessInstaller1
-            // 
-            this.serviceProcessInstaller1.Password = null;
-            this.serviceProcessInstaller1.Username = null;
-            // 
-            // serviceInstaller1
-            // 
-            this.serviceInstaller1.ServiceName = "Info Service";
-            this.serviceInstaller1.Description = "Info Service";
-            this.serviceInstaller1.DisplayName = "Info Service";
-            // 
-            // ProjectInstaller
-            // 
-            this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1,
-            this.serviceInstaller1});
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
-
-        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
-        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
     }
 }

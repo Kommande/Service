@@ -162,46 +162,22 @@ namespace Network
                                         {
                                             return true;
                                         }
-                                        else
-                                        {
                                             return false;
-                                        }
                                     }
-                                    else
-                                    {
-                                        return true;
-                                    }
+                                    return true;
                                 }
-                                else
-                                {
-                                    return false;
-                                }
+                                return false;
                             }
-                            else
-                            {
-                                return true;
-                            }
+                            return true;
                         }
-                        else
-                        {
-                            return false;
-                        }
+                        return false;
                     }
-                    else
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
-            else
-            {
-                return true;
-            }
-            return false;
+           
+         return true;
         }
 
         private string GetMainUrl()

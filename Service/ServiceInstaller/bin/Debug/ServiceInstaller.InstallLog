@@ -1,0 +1,95 @@
+﻿Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется откат для сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Устанавливается служба Info Service...
+Создается исходный EventLog Info Service в журнале Application...
+Выполняется откат для сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Восстанавливается исходное состояние журнала событий для источника Info Service.
+При выполнении программы установки System.Diagnostics.EventLogInstaller на этапе отката возникло исключение.
+System.Security.SecurityException: Источник не найден, но не удалось выполнить поиск по нескольким или всем журналам событий.  Недоступные журналы: Security.
+На этапе отката процедуры установки возникло исключение. Это исключение будет проигнорировано, и откат будет продолжен. Однако после завершения отката компьютер может не вернуться полностью в исходное состояние.
+Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Устанавливается служба Info Service...
+Служба Info Service успешно установлена.
+Создается исходный EventLog Info Service в журнале Application...
+Выполняется фиксация сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Устанавливается служба Info Collector Service...
+Служба Info Collector Service успешно установлена.
+Создается исходный EventLog Info Collector Service в журнале Application...
+Выполняется фиксация сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется удаление сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется удаление источника EventLog Info Collector Service.
+Выполняется удаление службы Info Collector Service из системы...
+Служба Info Collector Service успешно удалена из системы.
+Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Устанавливается служба Info Collector Service...
+Служба Info Collector Service успешно установлена.
+Создается исходный EventLog Info Collector Service в журнале Application...
+Выполняется фиксация сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется удаление сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Выполняется удаление источника EventLog Info Collector Service.
+Выполняется удаление службы Info Collector Service из системы...
+Служба Info Collector Service успешно удалена из системы.
+Попытка останова службы Info Collector Service.
+Выполняется установка сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
+Устанавливается служба Info Collector Service...
+Служба Info Collector Service успешно установлена.
+Создается исходный EventLog Info Collector Service в журнале Application...
+Выполняется фиксация сборки 'F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   assemblypath = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.exe
+   logfile = F:\Service\Service\ServiceInstaller\bin\Debug\ServiceInstaller.InstallLog
