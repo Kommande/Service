@@ -1,4 +1,5 @@
 ﻿using Hardware;
+using Hardware.InfoCollectors;
 using Models;
 using Newtonsoft.Json;
 using Services.Interfaces;
@@ -34,6 +35,7 @@ namespace Services.Impl
             var ramSet = RamInfoCollector.CollectInfo();
             var monitor = DesctopMonitorInfoCollector.CollectInfo();
             var processorSet = ProcessorInfoCollector.CollectInfoFirstProcessor();
+            var networkAdaptersSet = NetworkAdapterInfoCollectorService.CollectInfo();
             var resultString = new StringBuilder();
             resultString.Append("{");
             resultString.Append(string.Format("\"softwareSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(programmsInfo)));
@@ -41,7 +43,8 @@ namespace Services.Impl
             resultString.Append(string.Format("\"processor\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(processorSet)));
             resultString.Append(string.Format("\"hddSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(hddSet)));
             resultString.Append(string.Format("\"ramSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(ramSet)));
-            resultString.Append(string.Format("\"monitor\": {0}" + Environment.NewLine, JsonConvert.SerializeObject(monitor.First())));
+            resultString.Append(string.Format("\"monitor\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(monitor.First())));
+            resultString.Append(string.Format("\"networkAdapters\": {0}" + Environment.NewLine,JsonConvert.SerializeObject(networkAdaptersSet)));
             resultString.Append("}");
             resultString.Append("}");
             return new ServiceActionResult() { Result = true, Message = resultString.ToString(), HttpResponseCode = 200 };

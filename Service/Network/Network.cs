@@ -183,6 +183,7 @@ namespace Network
         private string GetMainUrl()
         {
             IPHostEntry iPHost = Dns.GetHostEntry(Dns.GetHostName());
+           
             IPAddress iPAddress = IPAddress.Parse("127.0.0.1");
            /* foreach (var v in iPHost.AddressList)
             {

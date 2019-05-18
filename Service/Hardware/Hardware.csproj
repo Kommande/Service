@@ -54,17 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataMemeberAttribute.cs" />
-    <Compile Include="DesctopMonitor.cs" />
-    <Compile Include="DesctopMonitorInfoCollector.cs" />
+    <Compile Include="InfoCollectors\NetworkAdapterInfoCollectorService.cs" />
+    <Compile Include="Models\DesctopMonitor.cs" />
+    <Compile Include="InfoCollectors\DesctopMonitorInfoCollector.cs" />
     <Compile Include="Hardware.cs" />
-    <Compile Include="Hdd.cs" />
-    <Compile Include="HddInfoCollector.cs" />
-    <Compile Include="Processor.cs" />
-    <Compile Include="ProcessorInfoCollector.cs" />
+    <Compile Include="Models\Hdd.cs" />
+    <Compile Include="InfoCollectors\HddInfoCollector.cs" />
+    <Compile Include="Models\NetworkAdapter.cs" />
+    <Compile Include="Models\Processor.cs" />
+    <Compile Include="InfoCollectors\ProcessorInfoCollector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ram.cs" />
-    <Compile Include="RamInfoCollector.cs" />
+    <Compile Include="Models\Ram.cs" />
+    <Compile Include="InfoCollectors\RamInfoCollector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
