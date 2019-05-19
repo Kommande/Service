@@ -26,10 +26,10 @@ namespace Hardware.InfoCollectors
                     networkAdapters
                         .Add(new NetworkAdapter
                         {
-                            Name = networkAdapter["Caption"]?.ToString(),
-                            Mac = networkAdapter["MACAddress"]?.ToString(),
-                            Speed = networkAdapterInfos.First(x=>x["Caption"].Equals(networkAdapter["Caption"]?.ToString()))["Speed"]?.ToString(),
-                            IPAdresses = (string[])networkAdapter["IPAddress"]
+                            name = networkAdapter["Caption"]?.ToString(),
+                            mac = networkAdapter["MACAddress"]?.ToString(),
+                            speed = networkAdapterInfos.First(x=>x["Caption"].Equals(networkAdapter["Caption"]?.ToString()))["Speed"]?.ToString(),
+                            ipAdresses = (string[])networkAdapter["IPAddress"]
                         });
                 }
                 catch(Exception e)

@@ -10,12 +10,12 @@ namespace Hardware.Models
     public class NetworkAdapter
     {
         [DataMember]
-        public string Mac { get; set; }
+        public string mac { get; set; }
         [DataMember]
-        public string Name { get; set; }
+        public string name { get; set; }
         [DataMember]
-        public string Speed { get; set; }
+        public string speed { get; set; }
         [DataMember]
-        public string [] IPAdresses { get; set; }
+        public string [] ipAdresses { get; set; }
     }
 }
