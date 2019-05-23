@@ -31,7 +31,6 @@ namespace Hardware
             try
             {
                 ManagementClass mc = new ManagementClass("win32_processor");
-                //ManagementClass mc = new ManagementClass("Win32_ComputerSystemProcessor");
                 var moc = mc.GetInstances();
                 var enumerator = moc.GetEnumerator();
                 enumerator.MoveNext();

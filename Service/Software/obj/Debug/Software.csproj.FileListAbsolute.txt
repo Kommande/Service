@@ -43,3 +43,15 @@ D:\Диплом\Service-master\Service\Software\bin\Debug\Newtonsoft.Json.xml
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.dll
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.pdb
 D:\Диплом\Service-master\Service\Software\obj\Debug\Software.csprojResolveAssemblyReference.cache
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\Software.dll
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\Software.pdb
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\log4net.dll
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\Newtonsoft.Json.dll
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\log4net.xml
+D:\Диплом\Service-master\Service-master\Service\Software\bin\Debug\Newtonsoft.Json.xml
+D:\Диплом\Service-master\Service-master\Service\Software\obj\Debug\Software.csprojAssemblyReference.cache
+D:\Диплом\Service-master\Service-master\Service\Software\obj\Debug\Software.csproj.CoreCompileInputs.cache
+D:\Диплом\Service-master\Service-master\Service\Software\obj\Debug\Software.csproj.CopyComplete
+D:\Диплом\Service-master\Service-master\Service\Software\obj\Debug\Software.dll
+D:\Диплом\Service-master\Service-master\Service\Software\obj\Debug\Software.pdb
+F:\Service\Service\Software\obj\Debug\Software.csprojAssemblyReference.cache

@@ -14,4 +14,10 @@ D:\Диплом\Service-master\Service\Models\bin\Debug\Models.pdb
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.dll
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.pdb
 D:\Диплом\Service-master\Service\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+D:\Диплом\Service-master\Service-master\Service\Models\bin\Debug\Models.dll
+D:\Диплом\Service-master\Service-master\Service\Models\bin\Debug\Models.pdb
+D:\Диплом\Service-master\Service-master\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\Диплом\Service-master\Service-master\Service\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Диплом\Service-master\Service-master\Service\Models\obj\Debug\Models.dll
+D:\Диплом\Service-master\Service-master\Service\Models\obj\Debug\Models.pdb
 F:\Service\Service\Models\obj\Debug\Models.csprojAssemblyReference.cache

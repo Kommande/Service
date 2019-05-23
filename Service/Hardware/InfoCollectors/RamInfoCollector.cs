@@ -13,20 +13,13 @@ namespace Hardware
         public static List<Ram> CollectInfo()
         {
             ManagementClass ram = new ManagementClass("Win32_PhysicalMemory");
-            var volum = "";
-            var speed = "";
-            var serialNumber = "";
             var rams = new List<Ram>();
             foreach (var t in ram.GetInstances())
             {
                 try
                 {
-                    Console.WriteLine("Cap:{0} GB", Double.Parse(t.Properties["Capacity"].Value.ToString()) / 1024 / 1024 / 1024);
-                    Console.WriteLine("Volume:{0}", t.Properties["Name"].Value.ToString());
-                    volum = (t.Properties["Name"].Value.ToString());
-                    Console.WriteLine("Speed:{0} MHz", t.Properties["Speed"].Value);
-                    speed = t.Properties["Speed"].Value.ToString();
-                    serialNumber = t.Properties["SerialNumber"].Value.ToString();
+                    var speed = t.Properties["Speed"].Value.ToString();
+                    var serialNumber = t.Properties["SerialNumber"].Value.ToString();
                     rams.Add(new Ram()
                     {
                         volume = (Double.Parse(t.Properties["Capacity"].Value.ToString()) / 1024 / 1024 / 1024).ToString(),
@@ -42,10 +35,6 @@ namespace Hardware
                 }
             }
             return rams;
-        }
-        public string Test(string a, string b, string c)
-        {
-            return a + b + c;
         }
     }
 }

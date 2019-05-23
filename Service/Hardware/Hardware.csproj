@@ -56,7 +56,7 @@
     <Compile Include="DataMemeberAttribute.cs" />
     <Compile Include="InfoCollectors\NetworkAdapterInfoCollectorService.cs" />
     <Compile Include="Models\DesctopMonitor.cs" />
-    <Compile Include="InfoCollectors\DesctopMonitorInfoCollector.cs" />
+    <Compile Include="InfoCollectors\DesktopMonitorInfoCollector.cs" />
     <Compile Include="Hardware.cs" />
     <Compile Include="Models\Hdd.cs" />
     <Compile Include="InfoCollectors\HddInfoCollector.cs" />

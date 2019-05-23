@@ -13,7 +13,8 @@ namespace Hardware.InfoCollectors
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static List<NetworkAdapter> CollectInfo()
         {
-            var networkAdapterConfigurationSearcher = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration");
+            var networkAdapterConfigurationSearcher = 
+                new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration");
             var networkAdapterSearcher = new ManagementObjectSearcher($"SELECT * FROM Win32_NetworkAdapter");
             var networkAdapterConfigurationInfos = networkAdapterConfigurationSearcher.Get().CollectionToList();
             var networkAdapterInfos = networkAdapterSearcher.Get().CollectionToList();
@@ -28,7 +29,8 @@ namespace Hardware.InfoCollectors
                         {
                             name = networkAdapter["Caption"]?.ToString(),
                             mac = networkAdapter["MACAddress"]?.ToString(),
-                            speed = networkAdapterInfos.First(x=>x["Caption"].Equals(networkAdapter["Caption"]?.ToString()))["Speed"]?.ToString(),
+                            speed = networkAdapterInfos.First(x=>x["Caption"].Equals(networkAdapter["Caption"]?
+                                .ToString()))["Speed"]?.ToString(),
                             ipAdresses = (string[])networkAdapter["IPAddress"]
                         });
                 }

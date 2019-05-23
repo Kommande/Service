@@ -37,3 +37,14 @@ D:\Диплом\Service-master\Service\Hardware\obj\Debug\Hardware.pdb
 F:\Service\Service\Hardware\bin\Debug\Hardware.dll.config
 F:\Service\Service\Hardware\bin\Debug\Hardware.dll
 F:\Service\Service\Hardware\obj\Debug\Hardware.dll
+D:\Диплом\Service-master\Service-master\Service\Hardware\obj\Debug\Hardware.csprojAssemblyReference.cache
+D:\Диплом\Service-master\Service-master\Service\Hardware\obj\Debug\Hardware.csproj.CoreCompileInputs.cache
+D:\Диплом\Service-master\Service-master\Service\Hardware\obj\Debug\Hardware.dll
+D:\Диплом\Service-master\Service-master\Service\Hardware\obj\Debug\Hardware.pdb
+D:\Диплом\Service-master\Service-master\Service\Hardware\bin\Debug\Hardware.dll.config
+D:\Диплом\Service-master\Service-master\Service\Hardware\bin\Debug\Hardware.dll
+D:\Диплом\Service-master\Service-master\Service\Hardware\bin\Debug\Hardware.pdb
+D:\Диплом\Service-master\Service-master\Service\Hardware\bin\Debug\log4net.dll
+D:\Диплом\Service-master\Service-master\Service\Hardware\bin\Debug\log4net.xml
+D:\Диплом\Service-master\Service-master\Service\Hardware\obj\Debug\Hardware.csproj.CopyComplete
+F:\Service\Service\Hardware\obj\Debug\Hardware.csprojAssemblyReference.cache

@@ -33,7 +33,7 @@ namespace Test
                 Console.WriteLine("Получил");
                 var hddSet = HddInfoCollector.CollectInfo();
                 var ramSet = RamInfoCollector.CollectInfo();
-                var monitor =  DesctopMonitorInfoCollector.CollectInfo();
+                var monitor =  DesktopMonitorInfoCollector.CollectInfo();
                 var processorSet = ProcessorInfoCollector.CollectInfoFirstProcessor();
                 var resultString = new StringBuilder();
                 resultString.Append("{");
