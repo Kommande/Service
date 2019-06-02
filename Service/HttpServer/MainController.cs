@@ -38,7 +38,46 @@ namespace HttpServer
         }
         public ServiceActionResult InitDownload(HttpListenerRequest request)
         {
-            var result = downloadService.DownloadAndInstallMSI(request);
+            var query = HttpUtility.ParseQueryString(request.Url.Query);
+            
+            var result = new ServiceActionResult();
+            var fileName = query.Get(1);
+            if (fileName.Split('.').Last() == "msi")
+            {
+                if (configs.MsiFileServerUrl == null)
+                {
+                    return new ServiceActionResult() { Message = "Unable to download msi", Result = false, HttpResponseCode = 500 };
+                }
+                if (query.Get(0) != configs.MsiFileServerUrl)
+                {
+                    return new ServiceActionResult() { Message = "Invalid msi file server", Result = false, HttpResponseCode = 500 };
+                }
+                result = downloadService.DownloadAndInstallMSI(request);
+            }
+            if(fileName.Split('.').Last() == "dll")
+            {
+                if (configs.DllFileServerUrl == null)
+                {
+                    return new ServiceActionResult() { Message = "Unable to download dll", Result = false, HttpResponseCode = 500 };
+                }
+                if (query.Get(0) != configs.DllFileServerUrl)
+                {
+                    return new ServiceActionResult() { Message = "Invalid dll file server", Result = false, HttpResponseCode = 500 };
+                }
+                result = downloadService.DownloadDll(request);
+            }
+            if (fileName.Split('.').Last() == "config")
+            {
+                if (configs.ConfigFileServerUrl == null)
+                {
+                    return new ServiceActionResult() { Message = "Unable to download config", Result = false, HttpResponseCode = 500 };
+                }
+                if (query.Get(0) != configs.ConfigFileServerUrl)
+                {
+                    return new ServiceActionResult() { Message = "Invalid config file server", Result = false, HttpResponseCode = 500 };
+                }
+                result = downloadService.DownloadDll(request);
+            }
             return result;
         }
 

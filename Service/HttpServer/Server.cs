@@ -73,6 +73,10 @@ namespace HttpServer
                // var currentContext = (HttpListenerContext)state;
                
                 var controller =  new MainController(configs,downloadService,mainInfoCollectorService);
+                if (configs.ServerUrl!= null && context.Request.RemoteEndPoint.Address.ToString() != configs.ServerUrl)
+                {
+                    throw new Exception("Invalid Remote Server");
+                }
                 var requestedMethod = context.Request.Url.AbsolutePath.Remove(0,1);
                 //requestedMethod = requestedMethod.Remove(requestedMethod.Length - 1, 1);
                 Console.WriteLine("target method name: "+requestedMethod);
@@ -95,7 +99,7 @@ namespace HttpServer
                 log.Error(e.StackTrace);
                 context.Response.StatusCode = 500;
                 context.Response.SendChunked = true;
-                var bytes = Encoding.UTF8.GetBytes("Service Error");
+                var bytes = Encoding.UTF8.GetBytes(e.Message);
                 context.Response.OutputStream.Write(bytes, 0, bytes.Length);
                 context.Response.Close();
             }

@@ -16,40 +16,25 @@ namespace Test
             var port = ConfigurationManager.AppSettings["IpV4Port"] == string.Empty ? "6666" : ConfigurationManager.AppSettings["IpV4Port"];
             var pluginPath = ConfigurationManager.AppSettings["PluginPath"] == string.Empty ? null : ConfigurationManager.AppSettings["PluginPath"];
             var msiFilePath = ConfigurationManager.AppSettings["MsiFilePath"] == string.Empty ? null : ConfigurationManager.AppSettings["MsiFilePath"];
+            var serverUrl = ConfigurationManager.AppSettings["ServerUrl"] == string.Empty ? null : ConfigurationManager.AppSettings["ServerUrl"];
+            var msiFileServerUrl = ConfigurationManager.AppSettings["MsiFileServerUrl"] == string.Empty ? null : ConfigurationManager.AppSettings["MsiFileServerUrl"];
+            var dllFileServerUrl = ConfigurationManager.AppSettings["DllFileServerUrl"] == string.Empty ? null : ConfigurationManager.AppSettings["DllFileServerUrl"];
+            var ConfgiFileServerUrl = ConfigurationManager.AppSettings["ConfigFileServerUrl"] == string.Empty ? null : ConfigurationManager.AppSettings["ConfigFileServerUrl"];
+            //ConfigFileServerUrl
             var network = new Network.Network(new IpV4Filter() { Ip1 = ip1, Ip2 = ip2, Ip3 = ip3, Ip4 = ip4 },
-                new Models.Configs.HttpServerConfigs() { PluginPath = pluginPath,MsiFilePath = msiFilePath,Port = port });
+                new Models.Configs.HttpServerConfigs()
+                { PluginPath = pluginPath,
+                    MsiFilePath = msiFilePath,
+                    Port = port,
+                    ServerUrl = serverUrl,
+                    MsiFileServerUrl = msiFilePath,
+                    DllFileServerUrl = dllFileServerUrl,
+                    ConfigFileServerUrl = ConfgiFileServerUrl
+                });
             network.StartHttpServer();
-            /*var a = new SoftwareInfoCollector();
-
-            a.GetProgrammPath();*/
+          
             Console.ReadLine();
-            /*while (true)
-             {
-                Console.WriteLine("Жду");
-                var programmString = network.AcceptCommand();
-                var commandParser = new CommandParser();
-                var pathList = commandParser.ParsePath(programmString);
-                var programmsInfo = Software.SoftwareInfoCollector.CollectInfo(pathList);
-                Console.WriteLine("Получил");
-                var hddSet = HddInfoCollector.CollectInfo();
-                var ramSet = RamInfoCollector.CollectInfo();
-                var monitor =  DesktopMonitorInfoCollector.CollectInfo();
-                var processorSet = ProcessorInfoCollector.CollectInfoFirstProcessor();
-                var resultString = new StringBuilder();
-                resultString.Append("{");
-                resultString.Append(string.Format("\"softwareSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(programmsInfo)));
-                resultString.Append("\"hardware\": {");
-                resultString.Append(string.Format("\"processor\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(processorSet)));
-                resultString.Append(string.Format("\"hddSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(hddSet)));
-                resultString.Append(string.Format("\"ramSet\": {0}," + Environment.NewLine, JsonConvert.SerializeObject(ramSet)));
-                resultString.Append(string.Format("\"monitor\": {0}" + Environment.NewLine, JsonConvert.SerializeObject(monitor.First())));
-                resultString.Append("}");
-                resultString.Append("}");
-                Console.WriteLine(resultString);
-                Console.WriteLine("Отправляю");
-                network.SendResult(resultString.ToString());
-                Console.WriteLine("Отправил");
-        }*/
+
         }
 
 }

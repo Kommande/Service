@@ -27,7 +27,6 @@ namespace Software
         {
             var pathList = programs;
             var programsList = new List<Program>();
-
             foreach (var path in pathList)
             {
                 try
@@ -53,7 +52,6 @@ namespace Software
                 }
             }
             return programsList;
-
         }
         private static List<Program> GetProgramList()
         {
