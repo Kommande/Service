@@ -16,7 +16,7 @@ namespace Services
 
             Process installerProcess = new Process();
             ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.Arguments = string.Format("/i {0} /q REINSTALL = ALL REAINSTALLMODE=omus", filePath);
+            processInfo.Arguments = string.Format("/package {0} /q", filePath);
             processInfo.FileName = "msiexec";
             installerProcess.StartInfo = processInfo;
             installerProcess.Start();
